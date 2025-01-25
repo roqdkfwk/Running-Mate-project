@@ -74,11 +74,9 @@ public class UserController {
         if (foundUser == null) {
             foundUser = userService.findId(user.getUserName(), user.getEmail());
         }
-
         if (foundUser == null) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
-
         return new ResponseEntity<>(foundUser.getUserId(), HttpStatus.OK);
     }
 
@@ -91,7 +89,6 @@ public class UserController {
         if (foundUser == null) {
             foundUser = userService.findPwd(user.getUserName(), user.getEmail(), user.getUserId());
         }
-
         if (foundUser == null) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
